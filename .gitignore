@@ -7,3 +7,4 @@ phpunit.xml
 coverage.xml
 composer.lock
 env_test.sh
+.phpunit.result.cache
