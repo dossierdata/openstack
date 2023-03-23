@@ -26,7 +26,7 @@ class ServiceTest extends TestCase
         $this->client
             ->getConfig('base_uri')
             ->shouldBeCalled()
-            ->willReturn(\GuzzleHttp\Psr7\uri_for(''));
+            ->willReturn(\GuzzleHttp\Psr7\Utils::uriFor(''));
 
         $expectedJson = [
             "name" => "Ubuntu 12.10",
@@ -61,7 +61,7 @@ class ServiceTest extends TestCase
         $this->client
             ->getConfig('base_uri')
             ->shouldBeCalled()
-            ->willReturn(\GuzzleHttp\Psr7\uri_for(''));
+            ->willReturn(\GuzzleHttp\Psr7\Utils::uriFor(''));
 
         $this->client
             ->request('GET', 'v2/images', ['query' => ['limit' => 5], 'headers' => []])

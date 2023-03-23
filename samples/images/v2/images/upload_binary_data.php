@@ -12,5 +12,5 @@ $openstack = new OpenStack\OpenStack([
 $service = $openstack->imagesV2();
 
 $image  = $service->getImage('{imageId}');
-$stream = \GuzzleHttp\Psr7\stream_for(fopen('{fileName}', 'r'));
+$stream = \GuzzleHttp\Psr7\Utils::streamFor(fopen('{fileName}', 'r'));
 $image->uploadData($stream);
